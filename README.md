@@ -8,14 +8,14 @@
 - **🥇BraTS-ISBI 2024 GoAT:** [Generalizability Across Tumors Challenge](BraTS2024-ISBI_GoAT.md)
 - **🥇BraTS 2024 Task 1:** [Adult Glioma Post Treatment](BraTS2024_Task1.md)
 - **🥉BraTS 2024 Task 3:** [Meningioma Radiotherapy](BraTS2024_Task3.md)
-- **🥈BraTS 2024 Task 7:** [Synthesis (Global) - Missing MRI ](./BraTS2024_Task7.md)-> [Check out poster! ](./imgs/MICCAI2024-Poster-Task7_8.pdf)
-- **🏅BraTS 2024 Task 8:** [Synthesis (Local) - Inpainting](./BraTS2024_Task8.md) -> [Check out poster! ](./imgs/MICCAI2024-Poster-Task7_8.pdf)
+- **🏅BraTS 2024 Task 7:** [Synthesis (Global) - Missing MRI ](./BraTS2024_Task7.md)-> [Check out poster! ](./imgs/MICCAI2024-Poster-Task7_8.pdf)
+- **🥈BraTS 2024 Task 8:** [Synthesis (Local) - Inpainting](./BraTS2024_Task8.md) -> [Check out poster! ](./imgs/MICCAI2024-Poster-Task7_8.pdf)
 
 ✅ This repository contains the code and all the steps to reproduce the results of the submissions to BraTS 2023 Task 1, BraTS-ISBI 2024 GoAT, BraTS 2024 Tasks 1, 3, 7 and 8.
 
 ✅ Note that BraTS 2023 Task 1, BraTS-ISBI 2024 GoAT BraTS 2024 Tasks 1 and 3 are segmentation tasks and BraTS 2024 Tasks 7 and 8 are synthetic generation (using WDM 3D).
 
-### :star_struck: We have released the trained weights!  :partying_face: 
+### :star_struck: We have released the trained weights!  :partying_face:
 
 💾 You can download them at ... You just need to place them in the correct place 🤓
 
