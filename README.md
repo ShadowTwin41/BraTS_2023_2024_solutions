@@ -15,6 +15,8 @@ This repository contains the code and all the steps to reproduce the results of 
 
 Note that BraTS 2023 Task 1, BraTS-ISBI 2024 GoAT BraTS 2024 Tasks 1 and 3 are segmentation tasks and BraTS 2024 Tasks 7 and 8 are synthetic generation (using WDM 3D).
 
+:star_struck: 
+
 ## Before running any experiments:
 
 For better experience, you should create a conda environment and have a machine with GPU.
