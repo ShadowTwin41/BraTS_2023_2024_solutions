@@ -1,29 +1,31 @@
-# Faking_it team! BraTS submissions.
+# 👋 Faking_it team! BraTS submissions 🎬
 
 ![alt text](imgs/Logo.png "Title")
 
-## Key Solutions (each subpage contains all the steps to reproduce the solutions):
+## 💡 Key Solutions (each subpage contains all the steps to reproduce the solutions):
 
-- **BraTS 2023 Task 1:** [Adult Glioma Segmentation](BraTS2023_Task1.md)
-- **BraTS-ISBI 2024 GoAT:** [Generalizability Across Tumors Challenge](BraTS2024-ISBI_GoAT.md)
-- **BraTS 2024 Task 1:** [Adult Glioma Post Treatment](BraTS2024_Task1.md)
-- **BraTS 2024 Task 3:** [Meningioma Radiotherapy](BraTS2024_Task3.md)
-- **BraTS 2024 Task 7:** [Synthesis (Global) - Missing MRI ](./BraTS2024_Task7.md)-> [Check out poster! ](./imgs/MICCAI2024-Poster-Task7_8.pdf)
-- **BraTS 2024 Task 8:** [Synthesis (Local) - Inpainting](./BraTS2024_Task8.md) -> [Check out poster! ](./imgs/MICCAI2024-Poster-Task7_8.pdf)
+- **🥇 BraTS 2023 Task 1:** [Adult Glioma Segmentation](BraTS2023_Task1.md)
+- **🥇BraTS-ISBI 2024 GoAT:** [Generalizability Across Tumors Challenge](BraTS2024-ISBI_GoAT.md)
+- **🥇BraTS 2024 Task 1:** [Adult Glioma Post Treatment](BraTS2024_Task1.md)
+- **🥉BraTS 2024 Task 3:** [Meningioma Radiotherapy](BraTS2024_Task3.md)
+- **🥈BraTS 2024 Task 7:** [Synthesis (Global) - Missing MRI ](./BraTS2024_Task7.md)-> [Check out poster! ](./imgs/MICCAI2024-Poster-Task7_8.pdf)
+- **🏅BraTS 2024 Task 8:** [Synthesis (Local) - Inpainting](./BraTS2024_Task8.md) -> [Check out poster! ](./imgs/MICCAI2024-Poster-Task7_8.pdf)
 
-This repository contains the code and all the steps to reproduce the results of the submissions to BraTS 2023 Task 1, BraTS-ISBI 2024 GoAT, BraTS 2024 Tasks 1, 3, 7 and 8.
+✅ This repository contains the code and all the steps to reproduce the results of the submissions to BraTS 2023 Task 1, BraTS-ISBI 2024 GoAT, BraTS 2024 Tasks 1, 3, 7 and 8.
 
-Note that BraTS 2023 Task 1, BraTS-ISBI 2024 GoAT BraTS 2024 Tasks 1 and 3 are segmentation tasks and BraTS 2024 Tasks 7 and 8 are synthetic generation (using WDM 3D).
+✅ Note that BraTS 2023 Task 1, BraTS-ISBI 2024 GoAT BraTS 2024 Tasks 1 and 3 are segmentation tasks and BraTS 2024 Tasks 7 and 8 are synthetic generation (using WDM 3D).
 
-:star_struck: 
+### :star_struck: We have released the trained weights!  :partying_face: 
+
+💾 You can download them at ... You just need to place them in the correct place 🤓
 
 ## Before running any experiments:
 
-For better experience, you should create a conda environment and have a machine with GPU.
+💻 For better experience, you should create a conda environment and have a machine with GPU.
 
 ### Segmentation tasks:
 
-16GB of VRAM might be enough, however, we recomend using a GPU with 24GB. Be carefull with the amount of RAM you can use, as our code load the entire dataset to memory by default for faster training, but it might not be suitable for your machine. To reduce this, look into the data loaders.
+⚠️16GB of VRAM might be enough, however, we recomend using a GPU with 24GB. Be carefull with the amount of RAM you can use, as our code load the entire dataset to memory by default for faster training, but it might not be suitable for your machine. To reduce this, look into the data loaders.
 
 **To create the conda environment:**
 
@@ -47,7 +49,7 @@ For better experience, you should create a conda environment and have a machine 
 
 ### Synthetesis tasks:
 
-40GB of VRAM is enough. We have set the `cache_rate=0` in `CacheDatase` in `c_bratsloader.py` file. For faster processing you can increase this number, up to 1. Be carefull with the amount of RAM you can use.
+⚠️40GB of VRAM is enough. We have set the `cache_rate=0` in `CacheDatase` in `c_bratsloader.py` file. For faster processing you can increase this number, up to 1. Be carefull with the amount of RAM you can use.
 
 To create the conda environment:
 
@@ -59,7 +61,7 @@ To create the conda environment:
    3. pip install blobfile
    4. pip install PyWavelets
 
-After running all commands, all dependencies should be installed. We performed our final tests on the 15 of October of 2024. If you find difficulties matching the versions, try to install the versions avaiable at that time.
+🤞 After running all commands, all dependencies should be installed. We performed our final tests on the 15 of October of 2024. If you find difficulties matching the versions, try to install the versions avaiable at that time.
 
 # If you find our work useful, please consider to ⭐️ **star this repository** and 📝 **cite our paper**:
 
