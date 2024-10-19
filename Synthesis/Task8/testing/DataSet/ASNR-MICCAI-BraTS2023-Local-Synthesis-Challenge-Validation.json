@@ -1,0 +1,8 @@
+{
+    "testing": [
+        {
+            "t1n_voided": "BraTS-GLI-00000-000/BraTS-GLI-00000-000-t1n-voided.nii.gz",
+            "mask": "BraTS-GLI-00000-000/BraTS-GLI-00000-000-mask.nii.gz"
+        }
+    ]
+}

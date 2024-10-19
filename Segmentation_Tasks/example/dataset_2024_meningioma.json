@@ -1,0 +1,11 @@
+{
+    "channel_names": {
+        "0": "T1c"
+    },
+    "labels": {
+        "background": 0,
+        "GTV": 1
+    },
+    "numTraining": 46,
+    "file_ending": ".nii.gz"
+}

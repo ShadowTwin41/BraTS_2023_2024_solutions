@@ -1,0 +1,167 @@
+{
+    "labels": {
+        "0": "Background",
+        "1": "GTV"
+    },
+    "licence": "hands off!",
+    "modality": {
+        "0": "T1C"
+    },
+    "name": "BraTS2024_Meningioma",
+    "numTest": 0,
+    "reference": "",
+    "release": "0.0",
+    "tensorImageSize": "4D",
+    "test": [],
+    "numTraining": 0,
+    "training": [
+        {
+            "image": "./imagesTr/BraTS-GLI-00005-100.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00005-100.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00005-101.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00005-101.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00006-100.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00006-100.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00006-101.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00006-101.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-100.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-100.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-101.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-101.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-102.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-102.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00005-100_fake_label_0.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00005-100_fake_label_0.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00005-100_fake_label_1.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00005-100_fake_label_1.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00005-100_fake_label_2.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00005-100_fake_label_2.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00005-100_real_label_3.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00005-100_real_label_3.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00005-100_real_label_4.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00005-100_real_label_4.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00006-100_fake_label_2.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00006-100_fake_label_2.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00006-100_fake_label_4.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00006-100_fake_label_4.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00006-100_real_label_0.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00006-100_real_label_0.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00006-100_real_label_1.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00006-100_real_label_1.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00006-100_real_label_3.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00006-100_real_label_3.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00006-101_fake_label_1.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00006-101_fake_label_1.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00006-101_fake_label_3.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00006-101_fake_label_3.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00006-101_fake_label_4.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00006-101_fake_label_4.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00006-101_real_label_0.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00006-101_real_label_0.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00006-101_real_label_2.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00006-101_real_label_2.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-100_fake_label_0.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-100_fake_label_0.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-100_fake_label_4.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-100_fake_label_4.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-100_real_label_1.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-100_real_label_1.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-100_real_label_2.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-100_real_label_2.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-100_real_label_3.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-100_real_label_3.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-101_fake_label_1.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-101_fake_label_1.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-101_fake_label_2.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-101_fake_label_2.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-101_fake_label_4.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-101_fake_label_4.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-101_real_label_0.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-101_real_label_0.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-101_real_label_3.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-101_real_label_3.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-102_fake_label_1.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-102_fake_label_1.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-102_fake_label_3.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-102_fake_label_3.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-102_real_label_0.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-102_real_label_0.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-102_real_label_2.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-102_real_label_2.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-GLI-00008-102_real_label_4.nii.gz",
+            "label": "./labelsTr/BraTS-GLI-00008-102_real_label_4.nii.gz"
+        }
+    ]
+}

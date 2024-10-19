@@ -1,0 +1,32 @@
+{
+    "description": "BraTS2024 Meningioma dataset",
+    "labels": {
+        "0": "Background",
+        "1": "GTV"
+    },
+    "licence": "hands off!",
+    "modality": {
+        "0": "T1C"
+    },
+    "name": "BraTS2024_Meningioma",
+    "numTest": 0,
+    "numTraining": 500,
+    "reference": "",
+    "release": "0.0",
+    "tensorImageSize": "4D",
+    "test": [],
+    "training": [
+        {
+            "image": "./imagesTr/BraTS-MEN-RT-0002-1.nii.gz",
+            "label": "./labelsTr/BraTS-MEN-RT-0002-1.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-MEN-RT-0003-1.nii.gz",
+            "label": "./labelsTr/BraTS-MEN-RT-0003-1.nii.gz"
+        },
+        {
+            "image": "./imagesTr/BraTS-MEN-RT-0004-1.nii.gz",
+            "label": "./labelsTr/BraTS-MEN-RT-0004-1.nii.gz"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: mednextv1
+Version: 1.7.0
+Summary: nnU-Net. Framework for out-of-the box biomedical image segmentation.
+Home-page: https://github.com/MIC-DKFZ/mednextv1
+Author: Division of Medical Image Computing, German Cancer Research Center
+Author-email: f.isensee@dkfz-heidelberg.de
+License: Apache License Version 2.0, January 2004
+Keywords: deep learning,image segmentation,medical image analysis,medical image segmentation,nnU-Net,mednextv1
+License-File: LICENSE
+Requires-Dist: torch>1.10.0
+Requires-Dist: tqdm
+Requires-Dist: dicom2nifti
+Requires-Dist: scikit-image>=0.14
+Requires-Dist: medpy
+Requires-Dist: scipy
+Requires-Dist: batchgenerators>=0.23
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: SimpleITK
+Requires-Dist: pandas
+Requires-Dist: requests
+Requires-Dist: nibabel
+Requires-Dist: tifffile
+Requires-Dist: matplotlib
