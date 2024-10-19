@@ -27,7 +27,7 @@
 
 ⚠️16GB of VRAM might be enough, however, we recomend using a GPU with 24GB. Be carefull with the amount of RAM you can use, as our code load the entire dataset to memory by default for faster training, but it might not be suitable for your machine. To reduce this, look into the data loaders.
 
-**To create the conda environment:**
+**💻 To create the conda environment:**
 
 1. conda create -n BraTS_solutions python=3.11.9
 2. pip install:
@@ -49,9 +49,9 @@
 
 ### Synthetesis tasks:
 
-⚠️40GB of VRAM is enough. We have set the `cache_rate=0` in `CacheDatase` in `c_bratsloader.py` file. For faster processing you can increase this number, up to 1. Be carefull with the amount of RAM you can use.
+⚠️ 40GB of VRAM is enough. We have set the `cache_rate=0` in `CacheDatase` in `c_bratsloader.py` file. For faster processing you can increase this number, up to 1. Be carefull with the amount of RAM you can use.
 
-To create the conda environment:
+💻 To create the conda environment:
 
 1. conda create --name wdm_submit python=3.10.1
 2. pip install:

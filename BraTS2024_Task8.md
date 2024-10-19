@@ -1,29 +1,29 @@
-# Faking_it team! BraTS submissions.
+# 👋 Faking_it team! BraTS submissions. 🎬
 
-## [BraTS 2024 - Task 8 - Synthesis (Local) - Inpainting](https://www.synapse.org/Synapse:syn53708249/wiki/627498)
+## :technologist: [BraTS 2024 - Task 8 - Synthesis (Local) - Inpainting](https://www.synapse.org/Synapse:syn53708249/wiki/627498)
 
-### Introduction to the challenge:
+### 👨‍🎓Introduction to the challenge:
 
-**Inpainting for Medical Imaging** : Inpainting is a well-established technique in computer vision, with successful algorithms designed to fill missing regions in 2D images. However, applying these methods to 3D medical images like MRI scans remains an open question. This challenge provides a platform to explore this potential and benchmark new inpainting techniques for brain tumor analysis.
+**📚 Inpainting for Medical Imaging** : Inpainting is a well-established technique in computer vision, with successful algorithms designed to fill missing regions in 2D images. However, applying these methods to 3D medical images like MRI scans remains an open question. This challenge provides a platform to explore this potential and benchmark new inpainting techniques for brain tumor analysis.
 
- **Clinical Significance** : Many algorithms for automatic brain MRI analysis support clinical decision-making. However, these algorithms often struggle with images containing tumors, as they are typically trained on healthy brains. This challenge addresses this limitation by focusing on synthesizing healthy tissue representations in tumor-affected regions. This could significantly improve the performance of existing algorithms for tasks like, but not limited to:
+📚 **Clinical Significance** : Many algorithms for automatic brain MRI analysis support clinical decision-making. However, these algorithms often struggle with images containing tumors, as they are typically trained on healthy brains. This challenge addresses this limitation by focusing on synthesizing healthy tissue representations in tumor-affected regions. This could significantly improve the performance of existing algorithms for tasks like, but not limited to:
 
 * Brain anatomy parcellation
 * Tissue segmentation
 * Brain extraction
 * Brain tumor growth modeling
 
-By overcoming the challenges of tumor-affected scans, we aim to improve the accuracy and reliability of automated brain image analysis in clinical settings.
+📊 By overcoming the challenges of tumor-affected scans, we aim to improve the accuracy and reliability of automated brain image analysis in clinical settings.
 
-### Solution - Brain Tumour Removing and Missing Modality Generation using 3D Wavelet Diffusion Model (To be published)
+### 💡Solution - Brain Tumour Removing and Missing Modality Generation using 3D Wavelet Diffusion Model (To be published)
 
-Our solution explores the 3D Wavelet Diffusion Models (3D WDM) for conditional Medical Image Synthetis.
+📖 Our solution explores the 3D Wavelet Diffusion Models (3D WDM) for conditional Medical Image Synthetis.
 
 **[Pipeline overview of the vanilla 3D WDM:](https://github.com/pfriedri/wdm-3d)**
 
 ![alt text](imgs/wdm.png "Title")
 
-Two main solutions were created:
+📖 Two main solutions were created:
 
 * Default (Dl): 3D WDM without any changes. For sampling (Figure below), the known region is replaced by the original scan (at each step t), keeping only the generated region to interest (ROI), i.e., to inpaint;
 
@@ -33,13 +33,13 @@ Two main solutions were created:
 
 ![alt text](imgs/Infer_task8.png "Title")
 
-#### Data augmentation strategy
+#### 🤖🏥📑 Data augmentation strategy
 
-We start by creating more random healthy masks. We trained a GAN from scratch, to meet the challenge requirements, but to avoid training more GANs (very time consuming), you can use the same label generator model trained to generate synthetic labels, as explained in [How we won BraTS 2023 Adult Glioma challenge? Just faking it! Enhanced Synthetic Data Augmentation and Model Ensemble for brain tumour segmentation](https://arxiv.org/abs/2402.17317). To train the generator, take a look at [BraTS2023_Task1.md](./BraTS2023_Task1.md), `Label generator `more concretly.
+⚠️ We start by creating more random healthy masks. We trained a GAN from scratch, to meet the challenge requirements, but to avoid training more GANs (very time consuming), you can use the same label generator model trained to generate synthetic labels, as explained in [How we won BraTS 2023 Adult Glioma challenge? Just faking it! Enhanced Synthetic Data Augmentation and Model Ensemble for brain tumour segmentation](https://arxiv.org/abs/2402.17317). To train the generator, take a look at [BraTS2023_Task1.md](./BraTS2023_Task1.md), `Label generator `more concretly.
 
-**Not recommended:** If you want to train a GAN using the labels provided in this dataset, you can use the same approach that was used for the [BraTS2024 meningioma dataset](./BraTS2024_Task3.md), but remember to create the correct csv file (you will need to play around with the `csv_creator.py`).
+**⚠️ Not recommended:** If you want to train a GAN using the labels provided in this dataset, you can use the same approach that was used for the [BraTS2024 meningioma dataset](./BraTS2024_Task3.md), but remember to create the correct csv file (you will need to play around with the `csv_creator.py`).
 
-**After training the generator (the recommended one!):**
+**🤖⚙️🏃‍♀️After training the generator (the recommended one!):**
 
 1. `cd data_creator`
 2. Copy the generator to the folder .`/weights`, just for convinience.
@@ -49,7 +49,7 @@ We start by creating more random healthy masks. We trained a GAN from scratch, t
 
 At this stage several synthetic healthy masks and respective voided T1c scans will be created.
 
-#### Conditional 3D WDM training
+#### 🤖⚙️🏃‍♀️Conditional 3D WDM training
 
 1. Create the json file by running the cells of `json_file_creator.ipynb`.
 
@@ -67,7 +67,7 @@ At this stage several synthetic healthy masks and respective voided T1c scans wi
 
 A folder `runs` will be created with the checkpoints and the Tensorboard file. Scans checkpoints are saved, as well as the training losses. In case lack of RAM, go to `wdm-3d/c_brats_loader.py` -> `CacheDataset` and reduce `cache_rate`.
 
-#### Run inference (experiments)
+#### 🤖⚙️🏃‍♀️📈 Run inference (experiments)
 
 **Change the variables:**
 
@@ -81,7 +81,7 @@ A folder `runs` will be created with the checkpoints and the Tensorboard file. S
 8. `BEG=0;` (case to start)
 9. `END=end;` (case to finish)
 
-#### Run inference (validation and testing sets)
+#### 🤖⚙️🏃‍♀️📈 Run inference (validation and testing sets)
 
 **To run the inference in a test set:**
 
@@ -97,4 +97,4 @@ A folder `runs` will be created with the checkpoints and the Tensorboard file. S
 
 ---
 
-# END
+# 🏁 END

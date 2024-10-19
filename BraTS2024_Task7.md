@@ -1,31 +1,31 @@
-# Faking_it team! BraTS submissions.
+# 👋 Faking_it team! BraTS submissions 🎬
 
-## [BraTS 2024 - Task 7 - Synthesis (Global) - Missing MRI ](https://www.synapse.org/Synapse:syn53708249/wiki/627507)
+## :technologist: [BraTS 2024 - Task 7 - Synthesis (Global) - Missing MRI ](https://www.synapse.org/Synapse:syn53708249/wiki/627507)
 
-### Introduction to the challenge:
+### 👨‍🎓 Introduction to the challenge:
 
-Automated brain tumor segmentation methods have seen great success recently, reaching performance levels with clear clinical utility. Most algorithms require four complete input magnetic resonance imaging (MRI) modalities, typically T1-weighted images with and without contrast enhancement, T2-weighted images, and FLAIR images. However, a common challenge in clinical routine is missing MR sequences, e.g., because of time constraints and/or image artifacts (such as patient motion). Therefore, substituting missing modalities to recover segmentation performance in these scenarios is highly desirable and necessary for the more widespread adoption of such algorithms in clinical routine.
+📚 Automated brain tumor segmentation methods have seen great success recently, reaching performance levels with clear clinical utility. Most algorithms require four complete input magnetic resonance imaging (MRI) modalities, typically T1-weighted images with and without contrast enhancement, T2-weighted images, and FLAIR images. However, a common challenge in clinical routine is missing MR sequences, e.g., because of time constraints and/or image artifacts (such as patient motion). Therefore, substituting missing modalities to recover segmentation performance in these scenarios is highly desirable and necessary for the more widespread adoption of such algorithms in clinical routine.
 
-The **BraSyn-2024** dataset is based on the **RSNA-ASNR-MICCAI BraTS 2021** dataset [1]. It describes a retrospective collection of brain tumor mpMRI scans acquired from multiple institutions under standard clinical conditions but with different equipment and imaging protocols, resulting in a vastly heterogeneous image quality reflecting diverse clinical practice across different institutions. Expert neuroradiologists approved ground truth annotations of every tumor sub-region.
-During the validation and test stages, the segmentation mask corresponding to images is unavailable for each subject, and one of the four modalities will be **randomly** excluded (`dropout').
-The participants are required to synthesize missing modalities
+👩‍⚕ 👨‍⚕ The **BraSyn-2024** dataset is based on the **RSNA-ASNR-MICCAI BraTS 2021** dataset [1]. It describes a retrospective collection of brain tumor mpMRI scans acquired from multiple institutions under standard clinical conditions but with different equipment and imaging protocols, resulting in a vastly heterogeneous image quality reflecting diverse clinical practice across different institutions. Expert neuroradiologists approved ground truth annotations of every tumor sub-region.
 
-### Solution - Brain Tumour Removing and Missing Modality Generation using 3D Wavelet Diffusion Model (To be published)
+📊 During the validation and test stages, the segmentation mask corresponding to images is unavailable for each subject, and one of the four modalities will be **randomly** excluded (`dropout'). The participants are required to synthesize missing modalities.
 
-Our solution explores the 3D Wavelet Diffusion Models (3D WDM) for conditional Medical Image Synthetis.
+### 💡 Solution - Brain Tumour Removing and Missing Modality Generation using 3D Wavelet Diffusion Model (To be published)
+
+📖 Our solution explores the 3D Wavelet Diffusion Models (3D WDM) for conditional Medical Image Synthetis.
 
 **[Pipeline overview of the vanilla 3D WDM:](https://github.com/pfriedri/wdm-3d)**
 
 ![alt text](imgs/wdm.png "Title")
 
-Two main solutions were created:
+📖 Two main solutions were created:
 
 * Default (Dg): No changes are made to the vanilla 3D WDM excpet that: 32 channels of input and output channels (4 modalities*8).;
 * Known 3 to 1 (K3T1g): Only the missing modality is generated. The 3 known modalities have no noise in all steps of WDM training and inference, only the modality of interest (MOI). The input shape has 4 more channels to inform the network which modality to generate, as shown in the next figure. 36 channels of input and 8 channels of output.
 
 ![alt text](./imgs/wdm_task7.png "Title")
 
-#### Run conditional 3D WDM training (We shared the weights of `known_3_to_gen_1`)
+#### 🤖⚙️🏃‍♀️ Run conditional 3D WDM training (We shared the weights of `known_3_to_gen_1`)
 
 **To run the training:**
 
@@ -43,7 +43,7 @@ Two main solutions were created:
 
 A folder `runs` will be created with the checkpoints and the Tensorboard file. Scans checkpoints are saved, as well as the training losses. In case lack of RAM, go to `wdm-3d/c_brats_loader.py` -> `CacheDataset` and reduce `cache_rate`.
 
-#### Run inference (experiments)
+#### 🤖⚙️🏃‍♀️📈 Run inference (experiments)
 
 To run some experiments, you can use the same command `bash run.sh`, but first you need to change some arguments inside of this file:
 
@@ -54,7 +54,7 @@ To run some experiments, you can use the same command `bash run.sh`, but first y
 
 It will randomly choose a modality to drop and generate. The results will be saved in `./results/{TRAIN_MODE}`.
 
-#### Run inference (validation and testing sets)
+#### 🤖⚙️🏃‍♀️📈 Run inference (validation and testing sets)
 
 **To run the inference in a test set:**
 
@@ -75,4 +75,4 @@ It will be created a folder with the same name as the dataset in the `prediction
 
 ---
 
-# END
+# 🏁 END

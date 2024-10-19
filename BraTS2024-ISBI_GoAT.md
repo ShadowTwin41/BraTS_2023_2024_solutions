@@ -1,26 +1,26 @@
-# Faking_it team! BraTS submissions.
+# 👋 Faking_it team! BraTS submissions 🎬
 
-## [BraTS 2024 (ISBI) - GoAT - Generalizability Across Tumors Challenge](https://www.synapse.org/Synapse:syn52939291/wiki/624518)
+## :technologist: [BraTS 2024 (ISBI) - GoAT - Generalizability Across Tumors Challenge](https://www.synapse.org/Synapse:syn52939291/wiki/624518)
 
-### Introduction to the challenge
+### 👨‍🎓 Introduction to the challenge
 
-This task aims to challenge participants to create a segmentation algorithm capable of adapting and generalizing to different scenarios with little prior information and/or data on the target class(es). The aim is to simulate the clinical scenario where we develop a segmentation tool agnostic to future clinical applications (i.e., a tool trained on a specific disease(s) that will be applied to new ones without access to additional training data).
+📚 This task aims to challenge participants to create a segmentation algorithm capable of adapting and generalizing to different scenarios with little prior information and/or data on the target class(es). The aim is to simulate the clinical scenario where we develop a segmentation tool agnostic to future clinical applications (i.e., a tool trained on a specific disease(s) that will be applied to new ones without access to additional training data).
 
-Specifically, the candidate algorithms should be able to generalize across:
+📊 Specifically, the candidate algorithms should be able to generalize across:
 
 * Lesion types (i.e., different number of lesions per scan, lesion sizes, and locations in the brain).
 * Institutions (i.e., different MRI scanners, acquisition protocols).
 * Demographics (i.e., different age, sex, etc.).
 
-  Additionally, lesions will differ in image characteristics; for example, some will miss or have limited necrotic core, edema, or contrast enhancement. So, while the segmentation mask labels will be consistent across disease types (i.e., the necrotic core, edema, and contrast enhancement masks will always have a consistent value), the presence of each label will vary in the training and validation/test data.
+📚 Additionally, lesions will differ in image characteristics; for example, some will miss or have limited necrotic core, edema, or contrast enhancement. So, while the segmentation mask labels will be consistent across disease types (i.e., the necrotic core, edema, and contrast enhancement masks will always have a consistent value), the presence of each label will vary in the training and validation/test data.
 
-### Solution - [Generalisation of Segmentation Using Generative Adversarial Networks](https://ieeexplore.ieee.org/document/10635839)
+### 💡 Solution - [Generalisation of Segmentation Using Generative Adversarial Networks](https://ieeexplore.ieee.org/document/10635839)
 
-Our solution utilises state-of-the-art conditional generative adversarial networks to generate realistic new cases and train a segmentation algorithm that takes advantage of the convolutions and attention mechanisms. Our solution achieved a lesion-wise DSC of 0.855, 0.863, 0.883 and a lesion-wise HD95 value of 24.83, 24.10 and 21.72 for the enhancing tumour, the tumour core and the whole tumour in the validation set, respectively.
+📖 Our solution utilises state-of-the-art conditional generative adversarial networks to generate realistic new cases and train a segmentation algorithm that takes advantage of the convolutions and attention mechanisms. Our solution achieved a lesion-wise DSC of 0.855, 0.863, 0.883 and a lesion-wise HD95 value of 24.83, 24.10 and 21.72 for the enhancing tumour, the tumour core and the whole tumour in the validation set, respectively.
 
-#### Generative Adversarial Network - GliGAN
+#### 🤖🏥📑 Generative Adversarial Network - GliGAN
 
-**First, the folder structure should be as follows:**
+**📁 First, the folder structure should be as follows:**
 
 1. GliGAN
    1. Checkpoint (**We provide our trained weights**)
@@ -40,11 +40,11 @@ Our solution utilises state-of-the-art conditional generative adversarial networ
       3. train
       4. utils
 
-**Pipeline overview of the GliGAN:**
+**🤖 Pipeline overview of the GliGAN:**
 
 ![alt text](imgs/GANs-train.png "Title")
 
-To run the GliGAN training
+🤖⚙️🏃‍♀️ To run the GliGAN training
 
 1. Change to `GliGAN/src/train` directory.
 2. **Create the csv file** - `python csv_creator.py --logdir brats_goat_2024 --dataset Brats_goat_2024 --datadir ../../DataSet/ISBI2024-BraTS-GoAT-TrainingData  --debug True`
@@ -56,24 +56,24 @@ To run the GliGAN training
    1. **Resume training -** `python label_main.py --logdir brats_goat_2024 --batch_size 4 --num_worker 4 --in_channels 3 --out_channels 3 --total_iter 200000 --dataset Brats_goat_2024 --resume_iter 1000`
 6. **GliGAN baseline (optional) -** `python tumour_main_baseline.py --logdir brats_goat_2024 --batch_size 2 --num_workers 2 --in_channels 4 --out_channels 1 --optim_lr 0.0001 --num_steps 2000000 --reg_weight 0 --noise_type gaussian_extended --modality t1ce --dataset Brats_goat_2024`
 
-**For inference:**
+**🤔🩻 For inference:**
 
 1. Change to `GliGAN/src/infer` directory.
 2. `python main_random_label_random_dataset_generator_multiprocess.py --batch_size 1 --in_channels_tumour 4 --out_channels_tumour 1 --out_channels_label 3 --dataset brats_goat_2024 --g_t1ce_n 402000  --g_t1_n 402000 --g_t2_n 314000 --g_flair_n 320000 --g_label_n 100000 --latent_dim 100 --logdir brats_goat_2024 --num_process 1 --start_case 0 --end_case 100 --new_n 17`
    1. **Tip:** use `start_case` and `end_case` to split the inference process manually in distinct machines/nodes, by splitting the dataset. To use all dataset in same machine, don't set `--start_case` and `--end_case`.
    2. You can control how many cases are created per sample, by setting `--new_n`. The inference pipeline has a "patience limit", i.e. if it does not find a place for the tumour after several attempts, it moves on to the next case.
 
-#### Segmentation Networks
+#### 🤖📈 Segmentation Networks
 
 Each network was implemented in the version 2 of the nnU-Net to take advantage of the pre-processing and data augmentation pipeline provided by this framework. Feel free to use the newest version of the nnUNet and include the missing networks (Swin UNETR, and the 2021 winner version).
 
-**Create the env variables:**
+**💻 Create the env variables:**
 
 * `export nnUNet_preprocessed="./nnUNet_preprocessed"`
 * `export nnUNet_results="./nnUNet_results"`
 * `export nnUNet_raw="./nnUNet_raw"`
 
-**To use the same version as us:**
+**🤖⚙️🏃‍♀️ To use the same version as us:**
 
 1. Go to the `nnUNet_install` and run `pip install -e .`
 2. Convert all data to the nnUNet format:
@@ -87,7 +87,7 @@ Each network was implemented in the version 2 of the nnU-Net to take advantage o
    2. Copy the `example/nnUNetPlans_ISBI_2024_goat.json` to the postprocessing folder, rename it to `nnUNetPlans.json`, and change the "`dataset_name`" to the correct name given to the dataset, e.g., `Dataset240_BraTS_ISBI_GoAT_2024_rGANs`.
 5. Create the `data_split.json` as you prefer (let the nnUNet do it automatically or use the `nnUNet/Data_splits.ipynb` (recomended))
 
-**Run the training (only the fold "all", which uses the entire dataset to train, without validation):**
+**🤖⚙️🏃‍♀️ Run the training (only the fold "all", which uses the entire dataset to train, without validation):**
 
 * nnUNet (3D full resolution) [nnUNet (3D full resolution)](https://github.com/MIC-DKFZ/nnUNet) - `nnUNetv2_train 240 3d_fullres all -device cuda --npz --c`
 * [Swin UNETR](https://arxiv.org/pdf/2201.01266) - `nnUNetv2_train 240 3d_fullres_SwinUNETR all -device cuda --npz -tr nnUNetTrainer_SwinUNETR --c`
@@ -95,11 +95,11 @@ Each network was implemented in the version 2 of the nnU-Net to take advantage o
 
 Only 3 checkpoints trained for this solution.
 
-#### Post-processing
+#### 🤔🔍📈 Post-processing
 
 Thresholding is used to reduce the number of FP. In previous editions, a threshold of 200 voxels was used by several winners, since several cases did not have enhancing tumour (ET label 3). However, this dataset will contain several differences between the training and the testing sets, therefore, the other regions, i.e., Whole Tumour (WT; labels 1, 2, 3), Tumour Core (TC; labels 1, 3) would benefit from this strategy. By knowing this and also due to the use of lesion-wise metrics, a threshold for each region is used to remove small structures that could be interpreted as FP. This is done in the segmentation inference pipeline.
 
-#### Segmentation inference
+#### 🤖⚙️🏃‍♀️📈 Segmentation inference
 
 In our submission we use the ensemble of 3 checkpoints:
 
@@ -112,7 +112,7 @@ To control what models are used for inference, go to `BraTS_ISBI_GoAT_2024_infer
 * L - Large nnUNet
 * rG - Real data + Synthetic data generated by the random label generator and GliGAN
 
-**To run the segmentation inference:**
+**🤖⚙️🏃‍♀️📈 To run the segmentation inference:**
 
 * Change to the directory `BraTS_ISBI_GoAT_2024_inference`
 * `python main.py --data_path ./in_data --output_path ./output --nnUNet_results ../nnUNet/nnUNet_results `
@@ -123,4 +123,4 @@ To control what models are used for inference, go to `BraTS_ISBI_GoAT_2024_infer
   * `inference`
 * The final inference (post-processed), will be avaiable in the `--output_path`.
 
-## END
+## 🏁 END
