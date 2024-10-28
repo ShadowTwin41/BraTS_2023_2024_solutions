@@ -63,7 +63,7 @@
 
 🤞 After running all commands, all dependencies should be installed. We performed our final tests on the 15 of October of 2024. If you find difficulties matching the versions, try to install the versions avaiable at that time.
 
-# If you find our work useful, please consider to ⭐️ **star this repository** and 📝 **cite our paper**:
+# If you find our work useful, please consider to ⭐️ **star this repository** and 📝 **cite our papers**:
 
 **BraTS 2023 Task 1:** [Adult Glioma Segmentation](BraTS2023_Task1.md)
 
