@@ -2,7 +2,7 @@
 
 ![alt text](imgs/Logo.png "Title")
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14001262.svg)](https://doi.org/10.5281/zenodo.14001262)
 
 ## 💡 Key Solutions (each subpage contains all the steps to reproduce the solutions):
 
@@ -19,7 +19,7 @@
 
 ### :star_struck: We have released the trained weights!  :partying_face:
 
-💾 You can download them at ... You just need to place them in the correct place 🤓
+💾 You can download them at [Zenodo](https://doi.org/10.5281/zenodo.14001262). You just need to place them in the correct place 🤓
 
 ## Before running any experiments:
 
