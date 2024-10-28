@@ -2,6 +2,8 @@
 
 ![alt text](imgs/Logo.png "Title")
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## 💡 Key Solutions (each subpage contains all the steps to reproduce the solutions):
 
 - **🥇 BraTS 2023 Task 1:** [Adult Glioma Segmentation](BraTS2023_Task1.md)
