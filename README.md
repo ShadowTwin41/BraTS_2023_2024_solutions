@@ -27,7 +27,7 @@
 
 ### Segmentation tasks:
 
-⚠️16GB of VRAM might be enough, however, we recomend using a GPU with 24GB. Be carefull with the amount of RAM you can use, as our code load the entire dataset to memory by default for faster training, but it might not be suitable for your machine. To reduce this, look into the data loaders.
+⚠️16GB of VRAM might be enough, however, we recommend using a GPU with 24GB. Be carefull with the amount of RAM you can use, as our code load the entire dataset to memory by default for faster training, but it might not be suitable for your machine. To reduce this, look into the data loaders.
 
 **💻 To create the conda environment:**
 
