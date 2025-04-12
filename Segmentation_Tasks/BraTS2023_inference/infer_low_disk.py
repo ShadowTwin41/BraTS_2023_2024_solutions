@@ -104,7 +104,7 @@ def convert_data_step(input_folder_nnunet, raw_dataset):
 ################################################################################
 # Performe inference for each model
 ################################################################################
-def ensemble_predictions(inference_folder, ensemble_prob_path, number_models=9, first_infer=False):
+def ensemble_predictions(inference_folder, ensemble_prob_path, number_models, first_infer=False):
     """
     Performs ensemble step by step, i.e., 
     after each inference it divides the prob maps by the number of models and sum with the existent prob maps,
@@ -228,16 +228,20 @@ def perform_inference_step(inference_folder, input_folder_nnunet, ensemble_code)
     # One by one should be faster than doing it in parallel (No RAM problems neither slow writting)
     ensemble_prob_path = join(inference_folder, 'ensemble', ensemble_code, 'prob')
     maybe_mkdir_p(ensemble_prob_path)
-
+    number_of_models = len(ensemble_code.split("_"))
+    print(f"Number of models: {number_of_models}")
+    first_infer = True
+    
     for run_command in all_commands:
-        print(f"First inference: {run_command}")
+        print(f"Inference: {run_command}")
         print("__")
         result = subprocess.run(run_command, shell=True, text=True, capture_output=True)
         print("Command output:")
         print(result.stdout)
         inference_output_folder = run_command.split("-o ")[-1].split(" -f")[0]
-        ensemble_predictions(inference_folder=inference_output_folder, ensemble_prob_path=ensemble_prob_path, number_models=9, first_infer=True)
+        ensemble_predictions(inference_folder=inference_output_folder, ensemble_prob_path=ensemble_prob_path, number_models=number_of_models, first_infer=first_infer)
         shutil.rmtree(inference_output_folder) 
+        first_infer = False
 
     # Creating labels from prob
     ensemble_label_path = join(inference_folder, 'ensemble', ensemble_code, 'raw')
