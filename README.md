@@ -34,7 +34,7 @@
 1. conda create -n BraTS_solutions python=3.11.9
 2. pip install:
 
-   1. pip3 install torch torchvision torchaudio
+   1. pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1
    2. pip install monai
    3. pip install nilearn
    4. pip install nibabel
